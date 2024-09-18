@@ -2815,7 +2815,7 @@ static void parse_new_commit(const char *arg)
 			strbuf_addstr(&new_data, "gpgsig-sha256 ");
 		else
 			die("Expected gpgsig algorithm sha1 or sha256, got %s", sig_alg);
-		string_list_split_in_place(&siglines, sig.buf, '\n', -1);
+		string_list_split_in_place(&siglines, sig.buf, "\n", -1);
 		strbuf_add_separated_string_list(&new_data, "\n ", &siglines);
 		strbuf_addch(&new_data, '\n');
 	}
